@@ -9,7 +9,10 @@ driver.find_element(By.NAME,"b") .send_keys("34")
 header_text = driver.find_element(By.XPATH,"//h1").text
 print(header_text)
 assert header_text=="Számológép"
-driver.find_element(By.ID,"submit").click()
+driver.find_element(By.ID,"submit-button").click()
+result=driver.find_element(By.ID,"result-input").get_attribute("value")
+print("eredmény: "+result)
+assert result=="57"
 
 
 
