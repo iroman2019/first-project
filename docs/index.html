@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="szamologep.css"/>
+
     <title>Title</title>
 </head>
 <body>
     <h1>Számológép</h1>
     <div>
         <p>Ez egy számológép. Csak nem működik.</p>
-        <p>
-            <input name="a" />
+        <div>
+            <input name="a" id="a-input"/>
             +
-            <input name="b" />
+            <input name="b" id="b-input"/>
 
             <input type="submit" id="submit-button" value="Számolj!" />
-            <div>Eredmény: <input name="b" readonly="readonly"/></div>
+        </div>
+        <div id="result">
+            Eredmény: <input name="b" readonly="readonly"/>
+        </div>
         </form>
     </div>
+    <script src="calc.js"></script>
 </body>
 </html>
