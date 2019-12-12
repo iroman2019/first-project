@@ -10,20 +10,20 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 
 class TestNew():
-  def setup_method(self, method):
-    self.driver = webdriver.Chrome()
-    self.vars = {}
+  def setup_method(, method):
+    .driver = webdriver.Chrome()
+    vars = {}
   
   def teardown_method(self, method):
-    self.driver.quit()
+    driver.quit()
   
   def test_new(self):
-    self.driver.get("http://www.learnwebservices.com/locations/server")
-    self.driver.set_window_size(1024, 612)
-    self.driver.find_element(By.ID, "nameInput").click()
-    self.driver.find_element(By.ID, "nameInput").send_keys("bbbb")
-    self.driver.find_element(By.ID, "coordsInput").click()
-    self.driver.find_element(By.ID, "coordsInput").send_keys("1,1")
-    self.driver.find_element(By.CSS_SELECTOR, ".btn-primary").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, ".alert").text == "Location has saved."
+    driver.get("http://www.learnwebservices.com/locations/server")
+    driver.set_window_size(1024, 612)
+    driver.find_element(By.ID, "nameInput").click()
+    driver.find_element(By.ID, "nameInput").send_keys("bbbb")
+    driver.find_element(By.ID, "coordsInput").click()
+    driver.find_element(By.ID, "coordsInput").send_keys("1,1")
+    driver.find_element(By.CSS_SELECTOR, ".btn-primary").click()
+    assert driver.find_element(By.CSS_SELECTOR, ".alert").text == "Location has saved."
   

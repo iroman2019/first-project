@@ -11,26 +11,26 @@ from selenium.webdriver.common.keys import Keys
 
 class TestDeletelocation():
   def setup_method(self, method):
-    self.driver = webdriver.Chrome()
-    self.vars = {}
+    driver = webdriver.Chrome()
+    vars = {}
   
   def teardown_method(self, method):
-    self.driver.quit()
+    driver.quit()
   
   def templatelocation(self):
-    self.driver.get("http://www.learnwebservices.com/locations/server")
-    self.driver.set_window_size(970, 445)
-    self.driver.find_element(By.ID, "nameInput").click()
-    self.driver.find_element(By.ID, "nameInput").send_keys(self.vars["name"])
-    self.driver.find_element(By.ID, "coordsInput").click()
-    self.driver.find_element(By.ID, "coordsInput").send_keys("13,13")
-    self.driver.find_element(By.CSS_SELECTOR, ".btn-primary").click()
+    driver.get("http://www.learnwebservices.com/locations/server")
+    driver.set_window_size(970, 445)
+    driver.find_element(By.ID, "nameInput").click()
+    driver.find_element(By.ID, "nameInput").send_keys(vars["name"])
+    driver.find_element(By.ID, "coordsInput").click()
+    driver.find_element(By.ID, "coordsInput").send_keys("13,13")
+    driver.find_element(By.CSS_SELECTOR, ".btn-primary").click()
   
   def test_deletelocation(self):
-    self.vars["name"] = self.driver.execute_script("return \'teszt_\'+Date.now()")
-    self.templatelocation()
-    self.driver.find_element(By.XPATH, "//tr[td[text()=\'self.vars["name"]\']]/td[6]/form/button").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, ".alert").text == "Location has deleted."
-    elements = self.driver.find_elements(By.XPATH, "//td[text()=\'self.vars["name"]\']")
+    vars["name"] = driver.execute_script("return \'teszt_\'+Date.now()")
+    templatelocation()
+    driver.find_element(By.XPATH, "//tr[td[text()=\'vars["name"]\']]/td[6]/form/button").click()
+    assert driver.find_element(By.CSS_SELECTOR, ".alert").text == "Location has deleted."
+    elements = driver.find_elements(By.XPATH, "//td[text()=\'vars["name"]\']")
     assert len(elements) == 0
   

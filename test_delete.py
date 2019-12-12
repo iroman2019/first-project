@@ -11,16 +11,16 @@ from selenium.webdriver.common.keys import Keys
 
 class TestDelete():
   def setup_method(self, method):
-    self.driver = webdriver.Chrome()
-    self.vars = {}
+    driver = webdriver.Chrome()
+    vars = {}
   
   def teardown_method(self, method):
-    self.driver.quit()
+    driver.quit()
   
   def test_delete(self):
-    self.driver.get("http://www.learnwebservices.com/locations/server")
-    self.driver.set_window_size(1552, 840)
-    self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(58) .btn").click()
-    assert self.driver.switch_to.alert.text == "Are you sure?"
-    self.driver.switch_to.alert.accept()
+    driver.get("http://www.learnwebservices.com/locations/server")
+    driver.set_window_size(1552, 840)
+    driver.find_element(By.CSS_SELECTOR, "tr:nth-child(58) .btn").click()
+    assert driver.switch_to.alert.text == "Are you sure?"
+    driver.switch_to.alert.accept()
   
